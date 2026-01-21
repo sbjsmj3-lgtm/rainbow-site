@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>쓸데없는 무지개 사이트</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-family: sans-serif;
+      color: white;
+      user-select: none;
+      transition: background-color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  화면을 터치하세요 🌈
+
+  <script>
+    const colors = [
+      "red",       // 빨강
+      "orange",    // 주황
+      "yellow",    // 노랑
+      "green",     // 초록
+      "blue",      // 파랑
+      "navy",      // 남색
+      "purple"     // 보라
+    ];
+
+    let index = 0;
+
+    document.body.addEventListener("click", () => {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    });
+
+    // 모바일 터치 대응
+    document.body.addEventListener("touchstart", () => {
+      document.body.style.backgroundColor = colors[index];
+      index = (index + 1) % colors.length;
+    });
+  </script>
+</body>
+</html>
